@@ -1,0 +1,245 @@
+/* General body styles */
+body {
+    background-color: white;
+    font-family: 'Press Start 2P', cursive;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: flex-start; /* Align content from the top */
+    align-items: center; /* Center horizontally */
+    height: 100vh;
+}
+
+/* Main container for the dialogue section */
+#container {
+    text-align: center;
+    width: 100%; /* Ensure full width */
+    max-width: 700px; /* Optional: Limit width for readability */
+    margin: 0 auto; /* Center horizontally */
+}
+
+/* Grilled cheese image */
+#grilled-cheese {
+    width: 188px; /* Increased by 25% from 150px */
+    margin-top: 25%;
+    margin-bottom: 25px;
+    animation: float 2s ease-in-out infinite; /* Add floating animation */
+}
+
+/* Floating effect */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0); /* Start and end at the same position */
+    }
+    50% {
+        transform: translateY(-10px); /* Move up slightly at the midpoint */
+    }
+}
+
+/* Dialogue box styling */
+#dialogue-box {
+    width: 100%;
+    max-width: 625px; /* Increased by 25% from 500px */
+    height: 150px; /* Fixed size for consistent height */
+    margin: 0 auto;
+    padding: 20px; /* Equal padding for all sides */
+    background-color: #f4f4f4;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: 5px 5px 0 #000;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box; /* Ensures padding doesn't increase box size unevenly */
+}
+
+#dialogue-text {
+    font-size: 18px;
+    color: #000;
+    text-align: left;
+    white-space: pre-wrap;
+    line-height: 1.6;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+}
+
+/* Button container styling */
+#button-container {
+    margin-top: 20px; /* Add spacing between dialogue box and buttons */
+    display: flex;
+    justify-content: center; /* Center the buttons as a group */
+    gap: 20px; /* Space between the back and next buttons */
+}
+
+#back-btn,
+#next-btn {
+    width: 50px; /* Fixed button size */
+    height: 50px;
+    cursor: pointer;
+}
+
+#back-btn.disabled {
+    opacity: 0.3; /* Gray out the back button when disabled */
+    pointer-events: none; /* Disable interaction with the back button */
+}
+
+#back-btn:hover:not(.disabled),
+#next-btn:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+    transition: transform 0.2s;
+}
+
+/* Tokenomics Section */
+#tokenomics-container {
+    margin-top: 50px; /* Space between the dialogue section and tokenomics */
+    width: 100%; /* Ensure full width */
+    max-width: 700px; /* Match the container size for consistency */
+    text-align: center;
+}
+
+#tokenomics-title {
+    font-size: 32px;
+    color: #000;
+    margin-bottom: 20px;
+    opacity: 0; /* Start invisible */
+    animation: fadeIn 2s forwards; /* Fade in effect */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Individual tokenomics item */
+.tokenomics-item {
+    background-color: #f4f4f4;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: 5px 5px 0 #000;
+    padding: 15px;
+    margin: 10px auto;
+    max-width: 500px;
+    opacity: 0; /* Start invisible */
+    transform: translateX(-100%); /* Start off-screen */
+    animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Slide to its natural position */
+    }
+}
+
+.tokenomics-item:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.tokenomics-item:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.tokenomics-item:nth-child(4) {
+    animation-delay: 1.5s;
+}
+
+/* Socials Section */
+#socials-container {
+    margin-top: 50px;
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+    opacity: 0; /* Start hidden */
+    transform: translateY(50px); /* Slide slightly down */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth fade/slide-in */
+}
+
+#socials-container.visible {
+    opacity: 1;
+    transform: translateY(0); /* Slide into position */
+}
+
+/* Socials Buttons Container */
+#socials-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px;
+}
+
+.social-button {
+    background-color: #f4f4f4;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: 5px 5px 0 #000;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.social-button a {
+    text-decoration: none;
+    color: #000;
+}
+
+.social-button:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Contract Address Section */
+#contract-container {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: #f4f4f4;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: 5px 5px 0 #000;
+    padding: 15px;
+    text-align: center;
+}
+
+#contract-text {
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+#copy-ca-btn {
+    background-color: #f4f4f4;
+    border: 2px solid #000;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+    transition: transform 0.2s ease-in-out;
+}
+
+#copy-ca-btn:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Highlighted Keywords */
+.highlight.supply {
+    color: #f1c40f; /* Yellow for Supply */
+    font-weight: bold;
+}
+
+.highlight.taxes {
+    color: #e74c3c; /* Red for Taxes */
+    font-weight: bold;
+}
+
+.highlight.fentanyl {
+    color: #3498db; /* Blue for Fentanyl */
+    font-weight: bold;
+}
+
+.highlight.lp {
+    color: #2ecc71; /* Green for LP */
+    font-weight: bold;
+}
