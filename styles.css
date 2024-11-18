@@ -243,3 +243,26 @@ body {
     color: #2ecc71; /* Green for LP */
     font-weight: bold;
 }
+
+/* Adjust Socials Section for Mobile */
+@media (max-width: 768px) {
+    #socials-buttons {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px; /* Reduce space between buttons */
+    }
+
+    .social-button {
+        padding: 10px 15px; /* Reduce button padding */
+        font-size: 14px; /* Smaller font size */
+    }
+
+    #contract-container {
+        padding: 10px; /* Reduce padding for the contract box */
+        font-size: 14px; /* Adjust text size for contract address */
+    }
+
+    #copy-ca-btn {
+        padding: 8px 12px; /* Smaller button size */
+        font-size: 12px; /* Adjust font size */
+    }
+}
