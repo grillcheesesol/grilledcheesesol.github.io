@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pigeonwifbag</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600;800&family=Ranchers&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #87CEEB;
+            color: white;
+        }
+        header {
+            position: relative;
+            height: 400px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            overflow: hidden;
+            padding: 0 40px;
+        }
+        .token-name {
+            position: absolute;
+            animation: slide-in-name 2s ease-out forwards;
+            left: -100%;
+            font-size: 4.5rem;
+            font-weight: bold;
+            color: white;
+            font-family: 'Ranchers', cursive;
+        }
+        .token-image {
+            position: absolute;
+            animation: slide-in-image 2s ease-out forwards;
+            right: -100%;
+            height: 350px;
+            width: auto;
+        }
+        @keyframes slide-in-name {
+            to {
+                left: 20%;
+            }
+        }
+        @keyframes slide-in-image {
+            to {
+                right: 20%;
+            }
+        }
+        .action-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .button-group {
+            display: flex;
+            gap: 15px;
+        }
+        .button-group img {
+            width: 50px;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+        .button-group img:hover {
+            transform: scale(1.1);
+        }
+        .contract-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+        }
+        .contract-section button {
+            background-color: white;
+            color: #87CEEB;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 12px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .contract-section button:hover {
+            background-color: #ddd;
+        }
+        .intro-container {
+            max-width: 800px;
+            margin: 20px auto 40px;
+            padding: 0 20px;
+            text-align: center;
+            font-size: 1.7rem;
+        }
+        .intro-line {
+            width: 80%;
+            height: 5px;
+            background-color: white;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        .intro-image {
+            display: block;
+            margin: 20px auto 40px; /* Added space */
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+            position: relative;
+            cursor: pointer;
+        }
+        .side-image {
+            width: 100px;
+            height: auto;
+            position: absolute;
+            animation: pulse 2s infinite;
+        }
+        .side-image.left {
+            left: calc(50% - 350px); /* Position to the left of the image */
+            top: calc(100% - 200px);
+        }
+        .side-image.right {
+            right: calc(50% - 350px); /* Position to the right of the image */
+            top: calc(100% - 200px);
+        }
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="token-name">pigeonwifbag</div>
+    <img src="pigeondrawing.png" alt="Pigeon Drawing" class="token-image">
+</header>
+
+<section class="action-section">
+    <div class="contract-section">
+        <p style="margin: 0;">0x1234567890abcdef1234567890abcdef12345678</p>
+        <button onclick="copyToClipboard()">Copy</button>
+    </div>
+    <div class="button-group">
+        <a href="https://dexscreener.com" target="_blank"><img src="dexscreener.png" alt="Dexscreener"></a>
+        <a href="https://t.me" target="_blank"><img src="telegram.png" alt="Telegram"></a>
+        <a href="https://twitter.com" target="_blank"><img src="twitter.png" alt="Twitter"></a>
+    </div>
+</section>
+
+<div class="intro-line"></div>
+<div class="intro-container">
+    <strong>pigeonwifbag</strong>, you say? Inspired by the viral image of a pigeon in Vancouver with a plastic bag over its head, this coin is a rallying cry for environmental awareness and change through the Solana comnunity. Just like that resilient pigeon, we're here to make an impact—starting with cleaner cities, reduced waste, and a community that's ready to laugh while making a difference.
+</div>
+
+<a href="https://t.me" target="_blank"><img src="pigeonwifbag.jpg" alt="Pigeon with bag on head" class="intro-image"></a>
+
+<script>
+    function copyToClipboard() {
+        const text = "0x1234567890abcdef1234567890abcdef12345678";
+        navigator.clipboard.writeText(text).then(() => {
+            alert("Contract Address copied to clipboard!");
+        });
+    }
+</script>
+
+</body>
+</html>
