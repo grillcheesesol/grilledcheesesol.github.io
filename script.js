@@ -1,6 +1,6 @@
 const dialogue = [
     "Hi, I'm Grilled Cheese.",
-    "I'm a memecoin on SOL, im a mf grilled cheese.",
+    "I'm a memecoin on base and im a mf grilled cheese.",
     "Projects nowadays kind of suck, including this one.",
     "Wouldn't it be funny if a grilled cheese was #1 on Solana though?"
 ];
@@ -26,7 +26,7 @@ const tokenomicsItems = [
     "Supply: 1,000,000,000 GRILL",
     "Taxes: fuck taxes",
     "Fentanyl: positive",
-    "LP: burnt by moonshot"
+    "LP: locked"
 ];
 
 // Function to type out text character by character
