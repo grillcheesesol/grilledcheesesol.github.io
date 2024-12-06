@@ -276,7 +276,7 @@ body {
 
     /* Buttons */
     #button-container {
-        flex-direction: column; /* Stack buttons vertically */
+        flex-direction: row; /* Stack buttons horizontally */
         gap: 10px; /* Smaller gap between buttons */
     }
 
