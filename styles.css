@@ -280,12 +280,6 @@ body {
         gap: 10px; /* Smaller gap between buttons */
     }
 
-    #back-btn,
-    #next-btn {
-        width: 45px; /* Adjust size */
-        height: 45px;
-    }
-
     /* Tokenomics section */
     #tokenomics-container {
         margin-top: 30px; /* Reduce spacing */
@@ -332,6 +326,13 @@ body {
     .highlight.fentanyl,
     .highlight.lp {
         font-size: 90%; /* Slightly smaller highlights */
+    }
+}
+
+/* Lock horizontal scrolling only on mobile */
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden; /* Prevent horizontal scrolling on mobile only */
     }
 }
 
