@@ -1,8 +1,8 @@
 const dialogue = [
     "Hi, I'm Grilled Cheese.",
-    "I'm a memecoin on base and im a mf grilled cheese.",
+    "I'm a memecoin on Base and im a mf grilled cheese.",
     "Projects nowadays kind of suck, including this one.",
-    "Wouldn't it be funny if a grilled cheese was #1 on Solana though?"
+    "Wouldn't it be funny if a grilled cheese was #1 on Base though?"
 ];
 
 let currentLine = 0;
