@@ -243,3 +243,95 @@ body {
     color: #2ecc71; /* Green for LP */
     font-weight: bold;
 }
+
+/* General mobile adjustments */
+@media (max-width: 768px) {
+    body {
+        font-size: 0.9rem; /* Slightly smaller font size */
+        padding: 10px; /* Add padding for better spacing */
+    }
+
+    /* Adjust the main container width */
+    #container {
+        max-width: 95%; /* Reduce width for mobile */
+    }
+
+    /* Grilled cheese image */
+    #grilled-cheese {
+        width: 150px; /* Scale down for mobile */
+        margin-top: 20%; /* Adjust margin to fit better */
+        margin-bottom: 15px;
+    }
+
+    /* Dialogue box */
+    #dialogue-box {
+        max-width: 90%; /* Reduce width for better fit */
+        padding: 15px; /* Adjust padding */
+        font-size: 16px; /* Slightly smaller text */
+    }
+
+    #dialogue-text {
+        font-size: 16px; /* Match dialogue box font size */
+    }
+
+    /* Buttons */
+    #button-container {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px; /* Smaller gap between buttons */
+    }
+
+    #back-btn,
+    #next-btn {
+        width: 45px; /* Adjust size */
+        height: 45px;
+    }
+
+    /* Tokenomics section */
+    #tokenomics-container {
+        margin-top: 30px; /* Reduce spacing */
+    }
+
+    .tokenomics-item {
+        max-width: 90%; /* Reduce width for mobile */
+        padding: 10px; /* Adjust padding */
+    }
+
+    /* Socials Section */
+    #socials-container {
+        margin-top: 30px; /* Adjust spacing */
+        transform: translateY(20px); /* Less pronounced slide effect */
+    }
+
+    #socials-buttons {
+        flex-direction: column; /* Stack socials buttons vertically */
+        gap: 15px; /* Adjust spacing */
+    }
+
+    .social-button {
+        padding: 10px 15px; /* Adjust padding */
+        font-size: 14px; /* Smaller text */
+    }
+
+    /* Contract address */
+    #contract-container {
+        padding: 10px; /* Reduce padding */
+    }
+
+    #contract-text {
+        font-size: 14px; /* Adjust font size */
+    }
+
+    #copy-ca-btn {
+        padding: 8px 10px; /* Adjust size */
+        font-size: 12px; /* Smaller text */
+    }
+
+    /* Highlighted text */
+    .highlight.supply,
+    .highlight.taxes,
+    .highlight.fentanyl,
+    .highlight.lp {
+        font-size: 90%; /* Slightly smaller highlights */
+    }
+}
+
