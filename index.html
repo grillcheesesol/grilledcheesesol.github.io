@@ -42,10 +42,11 @@
         }
         
         .button {
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin: 10px 0;
             padding: 10px 20px;
-            text-align: center;
             text-decoration: none;
             border-radius: 5px;
             font-size: 18px;
@@ -57,6 +58,12 @@
         .button:hover {
             background: #2980b9;
         }
+
+        .button img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
     </style>
 </head>
 <body>
@@ -64,8 +71,15 @@
         <img src="icon (1).png" alt="Ethereum Unicorn Logo">
     </div>
 
-    <a class="button" href="https://dexscreener.com" target="_blank">DEXScreener</a>
-    <a class="button" href="https://twitter.com" target="_blank">Twitter</a>
-    <a class="button" href="https://telegram.org" target="_blank">Telegram</a>
+    <a class="button" href="https://dexscreener.com" target="_blank">
+        <img src="dexscreener.png" alt="DEXScreener Logo">DEXScreener
+    </a>
+    <a class="button" href="https://twitter.com" target="_blank">
+        <img src="twitter.png" alt="Twitter Logo">Twitter
+    </a>
+    <a class="button" href="https://telegram.org" target="_blank">
+        <img src="telegram.png" alt="Telegram Logo">Telegram
+    </a>
 </body>
 </html>
+
