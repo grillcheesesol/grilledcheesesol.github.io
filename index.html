@@ -30,6 +30,7 @@
             overflow: hidden;
             z-index: -1;
             pointer-events: none;
+            background: linear-gradient(135deg, #141E30, #243B55); /* Fallback background */
         }
 
         .matrix span {
@@ -134,8 +135,7 @@
 
         const createMatrixEffect = () => {
             const screenWidth = window.innerWidth;
-            const screenHeight = window.innerHeight;
-            const numChars = screenWidth > 768 ? 150 : 50; // Adjust number of characters based on screen size
+            const numChars = screenWidth > 768 ? 100 : 30; // Further reduce for mobile
 
             for (let i = 0; i < numChars; i++) {
                 const span = document.createElement('span');
@@ -147,12 +147,30 @@
             }
         };
 
-        createMatrixEffect();
-
-        window.addEventListener('resize', () => {
+        const resetMatrixEffect = () => {
             matrix.innerHTML = '';
             createMatrixEffect();
+        };
+
+        // Initial effect setup
+        createMatrixEffect();
+
+        // Reset effect on resize with a timeout to avoid rapid resizing issues
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(resetMatrixEffect, 300);
         });
+
+        // Fallback for mobile devices: hide matrix if performance is poor
+        if (/Mobi|Android/i.test(navigator.userAgent)) {
+            const hideMatrix = () => {
+                matrix.style.display = 'none';
+                document.body.style.background = 'linear-gradient(135deg, #141E30, #243B55)';
+            };
+
+            setTimeout(hideMatrix, 5000); // Hide after 5 seconds if issues persist
+        }
     </script>
 </body>
 </html>
