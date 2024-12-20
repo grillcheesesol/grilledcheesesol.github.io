@@ -17,8 +17,39 @@
             background: linear-gradient(135deg, #141E30, #243B55);
             color: #ffffff;
             font-family: Arial, sans-serif;
+            overflow: hidden;
+            position: relative;
         }
-        
+
+        .matrix {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .matrix span {
+            position: absolute;
+            font-size: 16px;
+            font-family: monospace;
+            color: rgba(255, 255, 255, 0.1);
+            white-space: nowrap;
+            user-select: none;
+            animation: fall 10s linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+
         .logo-container {
             width: 200px;
             height: 200px;
@@ -67,6 +98,8 @@
     </style>
 </head>
 <body>
+    <div class="matrix" id="matrix"></div>
+
     <div class="logo-container">
         <img src="icon (1).png" alt="Ethereum Unicorn Logo">
     </div>
@@ -80,6 +113,25 @@
     <a class="button" href="https://telegram.org" target="_blank">
         <img src="telegram.png" alt="Telegram Logo">Telegram
     </a>
+
+    <script>
+        const matrix = document.getElementById('matrix');
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        const createMatrixEffect = () => {
+            const screenWidth = window.innerWidth;
+            const screenHeight = window.innerHeight;
+
+            for (let i = 0; i < 150; i++) {
+                const span = document.createElement('span');
+                span.textContent = chars.charAt(Math.floor(Math.random() * chars.length));
+                span.style.left = `${Math.random() * screenWidth}px`;
+                span.style.animationDelay = `${Math.random() * 10}s`;
+                span.style.animationDuration = `${Math.random() * 5 + 5}s`;
+                matrix.appendChild(span);
+            }
+        };
+
+        createMatrixEffect();
+    </script>
 </body>
 </html>
-
