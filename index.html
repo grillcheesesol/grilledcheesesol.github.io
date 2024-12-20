@@ -29,6 +29,7 @@
             height: 100%;
             overflow: hidden;
             z-index: -1;
+            pointer-events: none;
         }
 
         .matrix span {
@@ -47,6 +48,19 @@
             }
             100% {
                 transform: translateY(100vh);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .matrix span {
+                font-size: 12px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .matrix span {
+                font-size: 10px;
+                color: rgba(255, 255, 255, 0.08);
             }
         }
 
@@ -117,11 +131,13 @@
     <script>
         const matrix = document.getElementById('matrix');
         const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+
         const createMatrixEffect = () => {
             const screenWidth = window.innerWidth;
             const screenHeight = window.innerHeight;
+            const numChars = screenWidth > 768 ? 150 : 50; // Adjust number of characters based on screen size
 
-            for (let i = 0; i < 150; i++) {
+            for (let i = 0; i < numChars; i++) {
                 const span = document.createElement('span');
                 span.textContent = chars.charAt(Math.floor(Math.random() * chars.length));
                 span.style.left = `${Math.random() * screenWidth}px`;
@@ -132,6 +148,11 @@
         };
 
         createMatrixEffect();
+
+        window.addEventListener('resize', () => {
+            matrix.innerHTML = '';
+            createMatrixEffect();
+        });
     </script>
 </body>
 </html>
