@@ -30,6 +30,7 @@
             overflow: hidden;
             z-index: -1;
             pointer-events: none;
+            background: linear-gradient(135deg, #141E30, #243B55); /* Fallback background */
         }
 
         .matrix span {
@@ -160,7 +161,16 @@
             clearTimeout(resizeTimeout);
             resizeTimeout = setTimeout(resetMatrixEffect, 300);
         });
+
+        // Fallback for mobile devices: hide matrix if performance is poor
+        if (/Mobi|Android/i.test(navigator.userAgent)) {
+            const hideMatrix = () => {
+                matrix.style.display = 'none';
+                document.body.style.background = 'linear-gradient(135deg, #141E30, #243B55)';
+            };
+
+            setTimeout(hideMatrix, 5000); // Hide after 5 seconds if issues persist
+        }
     </script>
 </body>
 </html>
-
